@@ -1,4 +1,4 @@
-Source code latihan crud API dengan node js dan express js
+Source code tugas crud API dengan node js dan express js
 
 Routing data :
 1. landing (endpoint utama) => http://localhost:3001/
