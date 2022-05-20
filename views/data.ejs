@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style/data.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <title>Data List</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <h4 class="home"><a href="/">Mobile Legend Pedia</a></h4>
+        <a href="/user/login" class="login"> <i class="fa fa-sign-in"></i> Login</a>
+      </div>
+    </nav>
+    <div class="indentasi"></div>
+    <div class="wrapper">
+      <h3 class="title">Data Hero</h3>
+      <table>
+        <tr>
+          <td>Id</td>
+          <td>Nama</td>
+          <td>Role</td>
+          <td>Aksi</td>
+        </tr>
+        <% for(data of dataList){ %>
+        <tr>
+          <td><%= data.id %></td>
+          <td><%= data.nama %></td>
+          <td><%= data.role %></td>
+          <td>
+            <a href="/hero/<%= data.id %>"> <i class="fa fa-edit"></i> edit</a> |
+            <form action="/hero/delete" method="post">
+              <input type="hidden" name="id" value="<%= data.id %>" />
+              <button type="submit"><i class="fa fa-trash"></i> delete</button>
+            </form>
+          </td>
+        </tr>
+        <% }%>
+      </table>
+      <form action="/hero/add" method="post" class="tambah">
+        <input type="text" name="nama" placeholder="isikan nama hero" />
+        <input type="text" name="role" placeholder="isikan role hero" />
+        <button type="submit" class="tombolTambah"><i class="fa fa-plus"></i> Tambah</button>
+      </form>
+    </div>
+    <div class="wave"></div>
+    <footer>created with <i class="fa fa-heart"></i> by andri firmansyah</footer>
+  </body>
+</html>

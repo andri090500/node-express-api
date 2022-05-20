@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style/edit.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <title>edit data</title>
+  </head>
+  <body>
+    <form action="/hero/update" method="post">
+      <h4>Edit Data</h4>
+      <input type="hidden" name="id" value="<%= dataList[0].id %>" />
+      <div class="masukan">
+        <label for="nama">Nama</label>
+        <input type="text" name="nama" value="<%= dataList[0].nama %>" id="nama" />
+      </div>
+      <div class="masukan">
+        <label for="role">Role</label>
+        <input type="text" name="role" value="<%= dataList[0].role %>" id="role" />
+      </div>
+      <button type="submit"><i class="fa fa-edit"></i> Edit</button>
+      <button class="kembali">
+        <a href="/hero/"> <i class="fa fa-arrow-left"></i> Back</a>
+      </button>
+    </form>
+  </body>
+</html>
